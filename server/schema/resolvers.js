@@ -9,13 +9,13 @@ const resolvers = {
         },
         user: async (parent, args, context, info) => {
             const where = {};
-            if (args, _id) {
+            if (args._id) {
                 where._id = args._id
             }
-            if (args, email) {
+            if (args.email) {
                 where.email = args.email
             }
-            if (args, username) {
+            if (args.username) {
                 where.username = args.username
             }
 
@@ -24,25 +24,37 @@ const resolvers = {
     },
     Mutation: {
         login: async (parent, args, context, info) => {
-            const user = await user.findOne({ username: args.username})
+            // find the requested user by username
+            const user = await User.findOne({ username: args.username})
+            // throw an auth error if the user is not found
             if (!user) {
-                throw new AuthenticationError('No user foudn with that username.')
+                throw new AuthenticationError('No user found with that username.')
             }
 
-            const isCorrectPw = await user.isCorrectPassword(args.passord);
+            // if user found, validate the password
+            const isCorrectPw = await user.isCorrectPassword(args.password);
             if (!isCorrectPw) {
                 throw new AuthenticationError('Invalid password')
             }
 
-            const token = signToken({ _id: user._id, email: user.email, username: user.username});
-            
+            // sign a token with the found user object
+            const token = signToken(user);
+            // return the token and the user
             return {
                 token,
                 user,
             }
         },
         addUser: async (parent, args, context, info) => {
-            return await User.create(args);
+            // await creation of new user with the username, password, and email in the args
+            const newUser = await User.create(args);
+            // sign a token using the new user object
+            const token = signToken(newUser)
+            // return the user and token
+            return {
+                user: newUser,
+                token
+            }
         },
         updateUser: async (parent, args, context, info) => {
             return await User.findByIdAndUpdate(args._id, args, { new: true });
