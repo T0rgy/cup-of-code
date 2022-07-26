@@ -8,6 +8,11 @@ const resolvers = {
             return await User.find();
         },
         user: async (parent, args, context, info) => {
+            // check that at least one arg is provided
+            if (!args._id && !args.username && !args.email) {
+                throw new AuthenticationError('Must enter a username, password, or user ID');
+            }
+            
             const where = {};
             if (args._id) {
                 where._id = args._id

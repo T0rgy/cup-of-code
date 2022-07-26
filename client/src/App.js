@@ -1,18 +1,20 @@
 
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
-import { ApolloClient, InMemoryCache, ApolloProvider, gql, createHttpLink } from '@apollo/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 import Login from './pages/login';
 import Dashboard from './pages/dashboard';
+
+import Auth from './utils/auth';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('token');
+  const token = Auth.getToken();
   return {
     headers: {
       ...headers,
@@ -29,7 +31,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route 
             path='/'
@@ -40,7 +42,7 @@ function App() {
             element={<Login />}
           />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </ApolloProvider>
   );
 }

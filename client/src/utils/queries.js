@@ -10,7 +10,7 @@ export const ALL_USERS = gql`
     }
 `
 
-export const GET_USERS = gql`
+export const GET_USER = gql`
     query GET_USER($_id: ID, $username: String, $email: String) {
         user(_id: $_id, username: $username, email: $email) {
             _id

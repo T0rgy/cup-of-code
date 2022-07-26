@@ -4,7 +4,7 @@ import decode from 'jwt-decode';
 const localStorageKey = 'idToken';
 
 // class to instantiate for a user
-export default class AuthService {
+class Auth {
     // get token
     getToken() {
         return localStorage.getItem(localStorageKey);
@@ -13,7 +13,7 @@ export default class AuthService {
     // get user data
     getLoggedInUser() {
         // get token and decode it. Return either decoded data or false
-        return this.getToken() && decode(this.getToken())?.data || false
+        return this.getToken() && (decode(this.getToken())?.data || false)
     }
 
     // check if user is logged in
@@ -46,13 +46,15 @@ export default class AuthService {
 
     // login as function of token that redirects to dashboard and sets item in localStorage
     login(token) {
-        localStorage.setItem(token);
-        window.location.redirect('/');
+        localStorage.setItem(localStorageKey, token);
+        window.location.assign('/');
     }
 
     // logout removes token from localStorage and redirects to login window
     logout() {
         localStorage.removeItem(localStorageKey);
-        window.location.redirect('/login');
+        window.location.assign('/login');
     }
 }
+
+export default new Auth();
