@@ -13,6 +13,10 @@
     "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/T0rgy/mern-group-project-3"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
