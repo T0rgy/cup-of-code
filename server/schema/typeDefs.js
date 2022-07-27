@@ -23,7 +23,6 @@ const typeDefs = gql`
         description: String
         image: String
         price: Float
-        quantity: Int
         ingredients: [String]
         category: Category
     }
@@ -53,7 +52,6 @@ const typeDefs = gql`
         updateUser(_id: ID, email: String, password: String, username: String): User
         deleteUser(_id: ID): User
         addOrder(menuItems: [ID]!): Order
-        updateMenuitem(_id: ID!, quantity: Int!): MenuItem
     }
 `;
 
