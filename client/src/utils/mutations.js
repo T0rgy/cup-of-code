@@ -45,3 +45,23 @@ mutation DELETE_USER($_id: ID) {
     }
   }
 `
+
+export const ADD_ORDER = gql`
+  mutation Mutation($menuItems: [ID]!) {
+    addOrder(menuItems: $menuItems) {
+      _id
+      purchaseDate
+      menuItems {
+        name
+        _id
+        description
+        image
+        price
+        category {
+          name
+        }
+      }
+    }
+  }
+`
+

@@ -16,7 +16,7 @@ connection.on('open', async () => {
 
     console.log('categories seeded');
 
-    await Product.deleteMany();
+    await MenuItem.deleteMany();
 
     const menuItems = await MenuItem.insertMany([
         {
