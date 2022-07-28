@@ -16,7 +16,7 @@ connection.on('open', async () => {
 
     console.log('categories seeded');
 
-    await Product.deleteMany();
+    await MenuItem.deleteMany();
 
     const menuItems = await MenuItem.insertMany([
         {
@@ -63,7 +63,7 @@ connection.on('open', async () => {
             name: 'Avocado Toast (v)',
             category: categories[0]._id,
             description: 'Toast topped with a hefty amount of Guacomole.',
-            image: '',
+            image: 'avacado-toast.jpg',
             price: '8',
             ingredients: 'Wheat Toast, Avacado, Red Onion, Lime Marmalade, Piquillo Peppers'
         },
@@ -71,7 +71,7 @@ connection.on('open', async () => {
             name: 'Ham & Swiss',
             category: categories[1]._id,
             description: 'Traditional Ham and Swiss sandwhich.',
-            image: '',
+            image: 'ham-swiss.jpg',
             price: '10',
             ingredients: 'Toasted Sourdough Toast, Ham, Swiss Cheese'
         },
@@ -79,7 +79,7 @@ connection.on('open', async () => {
             name: 'BLT',
             category: categories[1]._id,
             description: 'The most famous sandwich on the market.',
-            image: '',
+            image: 'blt.jpg',
             price: '10',
             ingredients: 'Bacon, Lettuce, and Tomato duhhh...'
         },
@@ -87,7 +87,7 @@ connection.on('open', async () => {
             name: 'Pork Belly',
             category: categories[1]._id,
             description: 'Spicy tender pork belly sandwhich.',
-            image: '',
+            image: 'pork-belly.jgp',
             price: '14',
             ingredients: 'Pork Belly, Kimchi, Spicy Mayo, Roll'
         },
@@ -95,7 +95,7 @@ connection.on('open', async () => {
             name: 'Grilled Cheese (vg)',
             category: categories[1]._id,
             description: 'Sourdough bread loaded with the best cheese in Wisconsin.',
-            image: '',
+            image: 'grilled-cheese.jgp',
             price: '9',
             ingredients: 'Sourdough toast, Cheddar, Swiss, Gouda'
         },
@@ -103,7 +103,7 @@ connection.on('open', async () => {
             name: 'Drip Coffee',
             category: categories[2]._id,
             description: 'House Blend Coffee',
-            image: '',
+            image: 'drip-coffee.jpg',
             price: '3',
             ingredients: ''
         },
@@ -111,7 +111,7 @@ connection.on('open', async () => {
             name: 'Cold Brew',
             category: categories[2]._id,
             description: 'House Blend Cold Brew',
-            image: '',
+            image: 'cold-brew.jpg',
             price: '4',
             ingredients: ''
         },
@@ -119,7 +119,7 @@ connection.on('open', async () => {
             name: 'Latte',
             category: categories[2]._id,
             description: 'Latte with choice of milk.',
-            image: '',
+            image: 'latte.jpg',
             price: '4.5',
             ingredients: 'Soy Milk, Almond Milk, Oat Milk, Coconut Milk'
         },
@@ -127,7 +127,7 @@ connection.on('open', async () => {
             name: 'Double espresso',
             category: categories[2]._id,
             description: 'This will wake you up.',
-            image: '',
+            image: 'double-espresso.jpg',
             price: '2.5',
             ingredients: ''
         },
@@ -135,7 +135,7 @@ connection.on('open', async () => {
             name: 'Macchiato',
             category: categories[2]._id,
             description: 'Macchiato with choice of milk.',
-            image: '',
+            image: 'macciato.jpg',
             price: '3.25',
             ingredients: 'Soy Milk, Almond Milk, Oat Milk, Coconut Milk'
         },
@@ -143,7 +143,7 @@ connection.on('open', async () => {
             name: 'Chai Tea',
             category: categories[2]._id,
             description: 'Chia Tea with choice of milk.',
-            image: '',
+            image: 'chai-tea.jpg',
             price: '4.5',
             ingredients: 'Soy Milk, Almond Milk, Oat Milk, Coconut Milk'
         },
@@ -151,7 +151,7 @@ connection.on('open', async () => {
             name: 'Green Juice',
             category: categories[2]._id,
             description: 'Fresh Blend of fruits/veggies.',
-            image: '',
+            image: 'green-juice.jpg',
             price: '7',
             ingredients: 'Apple, Celery, Cucumber, Kale, Pear'
         },
@@ -159,7 +159,7 @@ connection.on('open', async () => {
             name: 'Orange Booster',
             category: categories[2]._id,
             description: 'Fresh Blend of fruits/veggies.',
-            image: '',
+            image: 'orange-juice.jpg',
             price: '7',
             ingredients: 'Apple, Carrot, Orange, Ginger'
         },
@@ -167,15 +167,15 @@ connection.on('open', async () => {
             name: 'Bloody Mary',
             category: categories[2]._id,
             description: 'The kick you need in the morning.',
-            image: '',
+            image: 'bloody-mary.jpg',
             price: '9',
-            ingredients: 'Tomato Juice, Celery, Cheese, Spices, Vodka'
+            ingredients: 'Tomato Juice, Vodka, Whatever is Laying Around in the Kitchen'
         },
         {
             name: 'Mimosa',
             category: categories[2]._id,
             description: 'The kick you need in the morning.',
-            image: '',
+            image: 'mimosa.jpg',
             price: '7',
             ingredients: 'Orange Juice, Champagne'
         },
@@ -183,7 +183,7 @@ connection.on('open', async () => {
             name: 'Doughnut',
             category: categories[3]._id,
             description: 'Tastey chocolate covered doughtnut.',
-            image: '',
+            image: 'doughnut.jpg',
             price: '2',
             ingredients: ''
         },
@@ -191,7 +191,7 @@ connection.on('open', async () => {
             name: 'Croissant',
             category: categories[3]._id,
             description: 'Flakey crossant',
-            image: '',
+            image: 'croissant.jpg',
             price: '3',
             ingredients: ''
         },
@@ -199,7 +199,7 @@ connection.on('open', async () => {
             name: 'Apple Danish',
             category: categories[3]._id,
             description: 'Danish Pastry filled with apple filling.',
-            image: '',
+            image: 'apple-danish.jpg',
             price: '3',
             ingredients: ''
         },
@@ -207,12 +207,14 @@ connection.on('open', async () => {
             name: 'New York Cheesecake',
             category: categories[3]._id,
             description: 'Rich New York style cheesecake.',
-            image: '',
+            image: 'cheesecake.jpg',
             price: '5',
             ingredients: ''
         },
         
-    ])
+    ]);
+
+    console.log('menuItems seeded');
     
 
     // delete all users
@@ -226,5 +228,4 @@ connection.on('open', async () => {
     });
 
     process.exit(0);
-
 })
