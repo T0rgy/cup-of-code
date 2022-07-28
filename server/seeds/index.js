@@ -11,7 +11,7 @@ connection.on('open', async () => {
         { name: 'Breakfast' },
         { name: 'Sandwiches' },
         { name: 'Drinks' },
-        { name: 'Pastries/Deserts' }
+        { name: 'Pastries/Desserts' }
     ]);
 
     console.log('categories seeded');
