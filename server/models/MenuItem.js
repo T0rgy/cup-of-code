@@ -19,11 +19,6 @@ const menuItemSchema = new Schema ({
         required: true,
         min: 0.50
     },
-    quantity: {
-        type: Number,
-        min: 0,
-        default: 0
-    },
     ingredients: [{
         type: String,
     }],

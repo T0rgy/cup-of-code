@@ -1,7 +1,220 @@
 const connection = require('../config/connection');
-const { User, } = require('../models');
+const { User, Category, MenuItem } = require('../models');
+
 
 connection.on('open', async () => {
+    // delete all categories
+    await Category.deleteMany();
+
+    // create categories
+    const categories = await Category.insertMany([
+        { name: 'Breakfast' },
+        { name: 'Sandwiches' },
+        { name: 'Drinks' },
+        { name: 'Pastries/Deserts' }
+    ]);
+
+    console.log('categories seeded');
+
+    await Product.deleteMany();
+
+    const menuItems = await MenuItem.insertMany([
+        {
+            name: 'Crepe Supreme',
+            category: categories[0]._id,
+            description: 'A savory stuffed crepe.',
+            image: 'crepe-supreme.jpg',
+            price: '10',
+            ingredients: 'Scrambled Egg, Chorizo, Avacado, Tortilla Crips'
+        },
+        {
+            name: 'Nutella Crepe',
+            category: categories[3]._id,
+            description: 'A sweet stuffed crepe.',
+            image: 'nutella-crepe.jpg',
+            price: '10',
+            ingredients: 'Crepe, Nutella, Strawberries'
+        },
+        {
+            name: 'Basic Breakefast',
+            category: categories[0]._id,
+            description: "You're run of the mill breakfast Mom would always make.",
+            image: 'basic-breakfast.jpg',
+            price: '10.50',
+            ingredients: 'Two Eggs, Bacon/Sausage, Potatoes, Sourdough Toast'
+        },
+        {
+            name: 'Biscuits and Sausage Gravy',
+            category: categories[0]._id,
+            description: 'Two cripsy handmade biscuits slathered in delicious sausage Gravy.',
+            image: 'biscuits-sausage-gravy.webp',
+            price: '15.50',
+            ingredients: 'Biscuits, Sausage, Sausage Gravy Mix, Green Onion'
+        },
+        {
+            name: 'Egg Scramble (vg)',
+            category: categories[0]._id,
+            description: 'Vegitarian egg scramble',
+            image: 'egg-scramble.jpg',
+            price: '12',
+            ingredients: 'Kale, Bell Peppers, Broccoli, Mushrooms, Potatoes'
+        },
+        {
+            name: 'Avocado Toast (v)',
+            category: categories[0]._id,
+            description: 'Toast topped with a hefty amount of Guacomole.',
+            image: '',
+            price: '8',
+            ingredients: 'Wheat Toast, Avacado, Red Onion, Lime Marmalade, Piquillo Peppers'
+        },
+        {
+            name: 'Ham & Swiss',
+            category: categories[1]._id,
+            description: 'Traditional Ham and Swiss sandwhich.',
+            image: '',
+            price: '10',
+            ingredients: 'Toasted Sourdough Toast, Ham, Swiss Cheese'
+        },
+        {
+            name: 'BLT',
+            category: categories[1]._id,
+            description: 'The most famous sandwich on the market.',
+            image: '',
+            price: '10',
+            ingredients: 'Bacon, Lettuce, and Tomato duhhh...'
+        },
+        {
+            name: 'Pork Belly',
+            category: categories[1]._id,
+            description: 'Spicy tender pork belly sandwhich.',
+            image: '',
+            price: '14',
+            ingredients: 'Pork Belly, Kimchi, Spicy Mayo, Roll'
+        },
+        {
+            name: 'Grilled Cheese (vg)',
+            category: categories[1]._id,
+            description: 'Sourdough bread loaded with the best cheese in Wisconsin.',
+            image: '',
+            price: '9',
+            ingredients: 'Sourdough toast, Cheddar, Swiss, Gouda'
+        },
+        {
+            name: 'Drip Coffee',
+            category: categories[2]._id,
+            description: 'House Blend Coffee',
+            image: '',
+            price: '3',
+            ingredients: ''
+        },
+        {
+            name: 'Cold Brew',
+            category: categories[2]._id,
+            description: 'House Blend Cold Brew',
+            image: '',
+            price: '4',
+            ingredients: ''
+        },
+        {
+            name: 'Latte',
+            category: categories[2]._id,
+            description: 'Latte with choice of milk.',
+            image: '',
+            price: '4.5',
+            ingredients: 'Soy Milk, Almond Milk, Oat Milk, Coconut Milk'
+        },
+        {
+            name: 'Double espresso',
+            category: categories[2]._id,
+            description: 'This will wake you up.',
+            image: '',
+            price: '2.5',
+            ingredients: ''
+        },
+        {
+            name: 'Macchiato',
+            category: categories[2]._id,
+            description: 'Macchiato with choice of milk.',
+            image: '',
+            price: '3.25',
+            ingredients: 'Soy Milk, Almond Milk, Oat Milk, Coconut Milk'
+        },
+        {
+            name: 'Chai Tea',
+            category: categories[2]._id,
+            description: 'Chia Tea with choice of milk.',
+            image: '',
+            price: '4.5',
+            ingredients: 'Soy Milk, Almond Milk, Oat Milk, Coconut Milk'
+        },
+        {
+            name: 'Green Juice',
+            category: categories[2]._id,
+            description: 'Fresh Blend of fruits/veggies.',
+            image: '',
+            price: '7',
+            ingredients: 'Apple, Celery, Cucumber, Kale, Pear'
+        },
+        {
+            name: 'Orange Booster',
+            category: categories[2]._id,
+            description: 'Fresh Blend of fruits/veggies.',
+            image: '',
+            price: '7',
+            ingredients: 'Apple, Carrot, Orange, Ginger'
+        },
+        {
+            name: 'Bloody Mary',
+            category: categories[2]._id,
+            description: 'The kick you need in the morning.',
+            image: '',
+            price: '9',
+            ingredients: 'Tomato Juice, Celery, Cheese, Spices, Vodka'
+        },
+        {
+            name: 'Mimosa',
+            category: categories[2]._id,
+            description: 'The kick you need in the morning.',
+            image: '',
+            price: '7',
+            ingredients: 'Orange Juice, Champagne'
+        },
+        {
+            name: 'Doughnut',
+            category: categories[3]._id,
+            description: 'Tastey chocolate covered doughtnut.',
+            image: '',
+            price: '2',
+            ingredients: ''
+        },
+        {
+            name: 'Croissant',
+            category: categories[3]._id,
+            description: 'Flakey crossant',
+            image: '',
+            price: '3',
+            ingredients: ''
+        },
+        {
+            name: 'Apple Danish',
+            category: categories[3]._id,
+            description: 'Danish Pastry filled with apple filling.',
+            image: '',
+            price: '3',
+            ingredients: ''
+        },
+        {
+            name: 'New York Cheesecake',
+            category: categories[3]._id,
+            description: 'Rich New York style cheesecake.',
+            image: '',
+            price: '5',
+            ingredients: ''
+        },
+        
+    ])
+    
+
     // delete all users
     await User.deleteMany();
 
