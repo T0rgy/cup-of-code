@@ -4,9 +4,12 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <Nav className="me-auto">
-      <Nav.Link className="text-white" as={Link} to="/menu">
+      
+      <Nav.Item>
+      <Link className="text-white" as={Nav.Link} to="/">
         MENU
-      </Nav.Link>
+      </Link>
+      </Nav.Item>
       <Nav.Link className="text-white" as={Link} to="/about">
         ABOUT US
       </Nav.Link>

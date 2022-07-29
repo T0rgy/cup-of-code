@@ -32,8 +32,9 @@ function App() {
   return (
 
     <ApolloProvider client={client}>
-    <Header />
+    
       <Router>
+      <Header />
         <Routes>
           <Route 
             path='/'
