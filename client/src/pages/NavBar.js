@@ -20,6 +20,7 @@ function NavBar() {
         SIGN UP
       </Nav.Link>
     </Nav>
+    // <h1>HI</h1>
   );
 }
 
