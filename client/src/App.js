@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
+import Header from "./pages/Header";
 import Login from './pages/login';
 import Dashboard from './pages/dashboard';
 
@@ -30,7 +30,9 @@ const client = new ApolloClient({
 
 function App() {
   return (
+
     <ApolloProvider client={client}>
+    <Header />
       <Router>
         <Routes>
           <Route 
