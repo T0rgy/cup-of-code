@@ -8,16 +8,8 @@ function NavBar() {
     if (Auth.loggedIn()) {
       return (
 <div>
-            <Link className="link" to="/menu">
-              Menu
-            </Link>
-            <Link className="link"  to="/about">
-              About
-            </Link>
-            <Link className="link"  to="/cart">
-              Cart
-            </Link>
-          
+
+        
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a className="link"  href="/" onClick={() => Auth.logout()}>
               Logout
@@ -27,6 +19,15 @@ function NavBar() {
     } else {
       return (
         <div>
+         <Link className="link" to="/menu">
+              Menu
+            </Link>
+            <Link className="link"  to="/about">
+              About
+            </Link>
+            <Link className="link"  to="/cart">
+              Cart
+            </Link>
             <Link className="link"  to="/signup">
               Signup
             </Link>

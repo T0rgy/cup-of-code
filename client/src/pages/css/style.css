@@ -1,8 +1,3 @@
-body{
-    padding: 0px;
-    margin: 0px;
-}
-
 
 
 /* Add a black background color to the top navigation */
@@ -32,4 +27,20 @@ body{
   .topnav a.link.active {
     background-color: #04AA6D;
     color: white;
+  }
+
+  .bgimage {
+    width:100%;
+    height:500px;
+    background: url('../images/hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-attachment: fixed;
+  }
+  .bgimage h1 ,.bgimage h3 {
+    color:white;
+    text-shadow:2px 2px #333;
+    text-align: center;
+    padding: 50px;
   }

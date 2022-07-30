@@ -1,12 +1,13 @@
 
-
+import "./hero"
 function About(){
 
     return(
 
+        
         <div className="container">
-
-        Testing
+        <Hero />
+        
 
         </div>
 
