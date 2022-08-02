@@ -6,7 +6,21 @@ export const ALL_USERS = gql`
             _id
             username
             email
-            orders
+            orders {
+                _id
+                purchaseDate
+                menuItems {
+                    _id
+                    name
+                    description
+                    image
+                    price
+                    category {
+                    _id
+                    name
+                    }
+                }
+            }
         }
     }
 `
@@ -17,9 +31,32 @@ export const GET_USER = gql`
             _id
             username
             email
-            orders
+            orders {
+                _id
+                purchaseDate
+                menuItems {
+                    _id
+                    name
+                    description
+                    image
+                    price
+                    category {
+                    _id
+                    name
+                    }
+                }
+            }
         }
     }
+`
+
+export const QUERY_CATEGORIES = gql`
+  {
+    categories {
+      _id
+      name
+    }
+  }
 `
 
 export const GET_MENUITEM = gql`

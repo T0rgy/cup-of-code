@@ -1,5 +1,4 @@
-
-import "./css/style.css";
+import React from 'react';
 
 function Hero(){
 

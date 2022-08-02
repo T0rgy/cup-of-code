@@ -21,9 +21,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.2.0",
-    "if-env": "^1.0.4",
-    "react-bootstrap": "^2.4.0"
+    "if-env": "^1.0.4"
   },
   "devDependencies": {
     "concurrently": "^7.3.0"

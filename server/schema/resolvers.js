@@ -53,6 +53,9 @@ const resolvers = {
                 return user.orders.id(_id);
             }
         },
+        categories: async () => {
+            return await Category.find();
+        },
         // checkout: async (parent, args, context) => {
         //     const url = new URL(context.headers.referer).origin;
         //     const order = new Order({ menuItems: args.menuItems });

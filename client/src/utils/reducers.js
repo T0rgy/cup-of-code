@@ -15,13 +15,13 @@ export const reducer = (state, action) => {
         case UPDATE_MENUITEMS:
             return {
                 ...state,
-                products: [...action.products]
+                menuItems: [...action.menuItems]
             };
 
         case UPDATE_CATEGORIES:
             return {
                 ...state,
-                categories: [...action.categories]
+                categories: [...action.categories],
             };
         
         case UPDATE_CURRENT_CATEGORY:
@@ -79,6 +79,6 @@ export const reducer = (state, action) => {
     }
 };
 
-export function useProductReducer(initialState) {
+export function useMenuItemReducer(initialState) {
     return useReducer(reducer, initialState);
 };

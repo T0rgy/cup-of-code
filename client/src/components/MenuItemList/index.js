@@ -2,21 +2,21 @@ import React, { useEffect } from 'react';
 import { useQuery }  from '@apollo/client';
 
 import MenuItem from '../MenuItem';
-import { useStoreContext } from '../../GlobalState';
-import { UPDATE_MENU_ITEMS } from '../../utils/actions';
-import { QUERY_MENU_ITEMS } from '../../utils/queries';
+import { useStoreContext } from '../../utils/GlobalState';
+import { UPDATE_MENUITEMS } from '../../utils/actions';
+import { GETMANY_MENUITEMS } from '../../utils/queries';
 
 function MenuItemList() {
     const [state, dispatch] = useStoreContext();
 
     const { currentCategory } = state;
 
-    const { loading, data } = useQuery(QUERY_MENU_ITEMS);
+    const { loading, data } = useQuery(GETMANY_MENUITEMS);
 
     useEffect(() => {
         if (data) {
             dispatch({
-                type: UPDATE_MENU_ITEMS,
+                type: UPDATE_MENUITEMS,
                 menuItems: data.menuItems,
             });
         }
@@ -45,6 +45,7 @@ function MenuItemList() {
                         name={menuItem.name}
                         price={menuItem.price}
                         ingredients={menuItem.ingredients}
+                        description={menuItem.description}
                         />
                     ))}
                 </div>

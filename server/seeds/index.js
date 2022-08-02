@@ -63,7 +63,7 @@ connection.on('open', async () => {
             name: 'Avocado Toast (v)',
             category: categories[0]._id,
             description: 'Toast topped with a hefty amount of Guacomole.',
-            image: 'avacado-toast.jpg',
+            image: 'avocado-toast.jpeg',
             price: '8',
             ingredients: 'Wheat Toast, Avacado, Red Onion, Lime Marmalade, Piquillo Peppers'
         },
@@ -87,7 +87,7 @@ connection.on('open', async () => {
             name: 'Pork Belly',
             category: categories[1]._id,
             description: 'Spicy tender pork belly sandwhich.',
-            image: 'pork-belly.jgp',
+            image: 'pork-belly.jpg',
             price: '14',
             ingredients: 'Pork Belly, Kimchi, Spicy Mayo, Roll'
         },
@@ -95,7 +95,7 @@ connection.on('open', async () => {
             name: 'Grilled Cheese (vg)',
             category: categories[1]._id,
             description: 'Sourdough bread loaded with the best cheese in Wisconsin.',
-            image: 'grilled-cheese.jgp',
+            image: 'grilled-cheese.jpg',
             price: '9',
             ingredients: 'Sourdough toast, Cheddar, Swiss, Gouda'
         },
@@ -119,7 +119,7 @@ connection.on('open', async () => {
             name: 'Latte',
             category: categories[2]._id,
             description: 'Latte with choice of milk.',
-            image: 'latte.jpg',
+            image: 'latte.jpeg',
             price: '4.5',
             ingredients: 'Soy Milk, Almond Milk, Oat Milk, Coconut Milk'
         },
@@ -135,7 +135,7 @@ connection.on('open', async () => {
             name: 'Macchiato',
             category: categories[2]._id,
             description: 'Macchiato with choice of milk.',
-            image: 'macciato.jpg',
+            image: 'macchiato.jpg',
             price: '3.25',
             ingredients: 'Soy Milk, Almond Milk, Oat Milk, Coconut Milk'
         },
