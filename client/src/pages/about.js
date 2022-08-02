@@ -1,5 +1,5 @@
 
-import "./hero"
+import Hero from "./Hero"
 function About(){
 
     return(
@@ -8,7 +8,6 @@ function About(){
         <div className="container">
         <Hero />
         
-
         </div>
 
     )
