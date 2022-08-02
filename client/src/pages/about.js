@@ -25,7 +25,7 @@ function About() {
       <p className="about">
         <h1>Our Food</h1>
         We have food from all over the world. We make it fresh with all
-        organic ingredients. You can come watch as we make it in front of you. 
+        organic ingredients. You can come watch as we make it in front of you.
       </p>
     </div>
   );
