@@ -45,6 +45,7 @@ const typeDefs = gql`
         menuItems(category: ID, name: String): [MenuItem]
         order(_id: ID!): Order
         checkout(menuItems: [ID]!): Checkout
+        categories: [Category]
     }
 
     type Mutation {
