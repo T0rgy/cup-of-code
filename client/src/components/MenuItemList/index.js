@@ -33,7 +33,7 @@ function MenuItemList() {
     }
 
     return (
-        <div className=''>
+        <div className='menuItemList'>
             <h2> Our MenuItems:</h2>
             {state.menuItems.length ? (
                 <div className=''>

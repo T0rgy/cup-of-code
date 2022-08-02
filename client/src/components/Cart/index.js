@@ -19,8 +19,8 @@ const Cart = () => {
             <h2>Shopping Cart</h2>
             {state.cart.length ? (
                 <div>
-                    {state.cart.map(item => (
-                        <CartItem key={item._id} item={item} />
+                    {state.cart.map((menuItem) => (
+                        <CartItem key={menuItem._id} item={menuItem} />
                     ))}
 
                     <div className=''>

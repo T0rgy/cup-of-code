@@ -29,11 +29,12 @@ const CartItem = ({ item }) => {
     }
 
     return (
-        <div className=''>
+        <div className='cartItem'>
             <div>
                 <img 
+                    className='cartItemImage'
                     src={`/images/${item.image}`}
-                    alt=''
+                    alt='cartItem'
                 />
             </div>
             <div>

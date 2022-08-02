@@ -34,9 +34,10 @@ function MenuItem(item) {
     }
 
     return (
-        <div className='card px-1 py-1'> 
+        <div className='menuItemCard'> 
             <Link to={`/menuItems/${_id}`}>
                 <img
+                    className='menuItemImage'
                     alt={name}
                     src={`/images/${image}`}
                     />
