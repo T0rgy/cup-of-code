@@ -1,5 +1,6 @@
+import Hero from '../components/Hero';
 
-import "./hero"
+
 function About(){
 
     return(
