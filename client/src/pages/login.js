@@ -28,27 +28,49 @@ const Login = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h1>Login</h1>
-            <input
-                name='username'
-                value={username}
-                onChange={e => setUsername(e.target.value)}
-                placeholder='Username'
-                type='text'
-                required
-            />
-            <input
-                name='password'
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                placeholder='Password'
-                type='password'
-                required
-            />
-            <button>Login</button>
-            {error && <div>Invalid credentials</div>}
-        </form>
+        <div id='login'>
+            <div className='container'>
+                <div id='login-row' className='row justify-content-center align-items-center'>
+                    <div id='login-column' className='col-md-6'>
+                        <div id='login-box' className='col-md-12'>
+                            <form id='login-form' onSubmit={handleSubmit}>
+                            <h1 className="text-center text-info pt-5">Login</h1>
+                            <div className='form-group'>
+                                <input
+                                className='form-control'
+                                    name='username'
+                                    value={username}
+                                    onChange={e => setUsername(e.target.value)}
+                                    placeholder='Username'
+                                    type='text'
+                                    required
+                                />
+                                </div>
+                                
+                                <div className='form-group'>
+
+                                <input
+                                className='form-control'
+                                    name='password'
+                                    value={password}
+                                    onChange={e => setPassword(e.target.value)}
+                                    placeholder='Password'
+                                    type='password'
+                                    required
+                                />
+                                </div>
+
+                                <div className='form-group pt-3'>
+
+                                <button className='btn btn-info btn-md'>Login</button>
+                                {error && <div>Invalid credentials</div>}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
 

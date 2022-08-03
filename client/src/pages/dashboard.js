@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { GET_USER } from '../utils/queries';
+import { GET_USER, GET_ORDER } from '../utils/queries';
 import Auth from '../utils/auth';
 
 const Dashboard = () => {
@@ -10,7 +10,7 @@ const Dashboard = () => {
     const currentUser = Auth.loggedIn()
     // if no logged in user, redirect to login page
     if (!currentUser) {
-        navigate('/login');
+        navigate('/about');
     }
 
     const { loading, error, data } = useQuery(GET_USER, {
@@ -28,6 +28,8 @@ const Dashboard = () => {
     if (!user) {
         return 'No user found';
     }
+
+    
 
     
     return (
