@@ -107,7 +107,7 @@ color: black;
   max-width: 75%;
 }
 .about {
-  float: right;
+  float: left;
   width: 50%;
   margin: 30px;
   align-content: center;
@@ -121,7 +121,7 @@ color: black;
 #login .container #login-row #login-column #login-box {
   margin-top: 120px;
   max-width: 600px;
-  height: 320px;
+  height: 420px;
   border: 1px solid #9C9C9C;
   background-color: #EAEAEA;
 }
