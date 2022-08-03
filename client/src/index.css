@@ -46,7 +46,6 @@
   text-align: center;
   padding: 50px;
 }
-<<<<<<< HEAD
 a {
   color: #B12704;
   text-decoration: none;
@@ -98,9 +97,26 @@ a:hover {
 }
 
 .menuItemImage {
-  max-width: 100%;
+  max-width: 75%;
 }
 
+.coffee {
+  float: ri;
+  width: 30%;
+  margin: 30px;
+}
+
+.about {
+  float: right;
+  width: 50%;
+  margin: 30px;
+  align-content: center;
+  padding: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: double;
+  border-bottom: #000000 4px;
+  background-color: #04AA6D;
+}
 
 @media screen and (max-width: 768px) {
   .cart {
@@ -114,25 +130,3 @@ a:hover {
     width: 100%;
   }
 }
-=======
-
-.coffee{
-
-  float: ri;
-  width: 30%;
-  margin: 30px;
-}
-
-.about 
-{
-  float: right;
-  width: 50%;
-  margin: 30px;
-  align-content: center;
-  padding: 100px;
-  font-family: Arial, Helvetica, sans-serif;
-  border-style: double;
-  border-bottom: #000000 4px;
-  background-color: #04AA6D;
-}
->>>>>>> sajid
