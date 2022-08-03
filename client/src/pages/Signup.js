@@ -32,45 +32,56 @@ function Signup(props) {
   };
 
   return (
-    <div className="container my-1">
+    <div id='login'>
       <Link to="/login">← Go to Login</Link>
+      <div className='container'>
+        <div id='login-row' className='row justify-content-center align-items-center'>
+          <div id='login-column' className='col-md-6'>
+            <div id='login-box' className='col-md-12'>
+            <form  id="login-form" onSubmit={handleFormSubmit}>
+              <h2 className='text-center text-info pt-5'>Signup</h2>
+              <div className="form-group">
 
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="username">Username:</label>
-          <input
-            placeholder="username"
-            name="username"
-            type="username"
-            id="username"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="password">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="password"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+                <label htmlFor="username">Username:</label>
+                <input
+                className='form-control'
+                  placeholder="username"
+                  name="username"
+                  type="username"
+                  id="username"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email:</label>
+                <input
+                className='form-control'
+                  placeholder="youremail@test.com"
+                  name="email"
+                  type="email"
+                  id="email"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Password:</label>
+                <input
+                className='form-control'
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  id="password"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="form-group">
+                <button className=" mt-3 btn btn-info btn-md" type="submit">Submit</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div> 
+      </div>
     </div>
   );
 }

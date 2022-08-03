@@ -34,7 +34,7 @@ const Login = () => {
                     <div id='login-column' className='col-md-6'>
                         <div id='login-box' className='col-md-12'>
                             <form id='login-form' onSubmit={handleSubmit}>
-                            <h1 className="text-center text-info pt-5">Login</h1>
+                            <h1 className="text-center text-info pt-5">Please login to start an order.</h1>
                             <div className='form-group'>
                                 <input
                                 className='form-control'
@@ -46,7 +46,7 @@ const Login = () => {
                                     required
                                 />
                                 </div>
-                                
+
                                 <div className='form-group'>
 
                                 <input
