@@ -112,3 +112,11 @@ export const GET_ORDER = gql`
         }
     }
 `
+
+export const QUERY_CHECKOUT = gql`
+    query getCheckout($menuItems: [ID]!) {
+        checkout(menuItems: $menuItems) {
+            session
+        }
+    }
+`;

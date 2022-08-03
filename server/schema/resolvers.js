@@ -1,6 +1,7 @@
 const { User, MenuItem, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
     Query: {
@@ -56,41 +57,42 @@ const resolvers = {
         categories: async () => {
             return await Category.find();
         },
-        // checkout: async (parent, args, context) => {
-        //     const url = new URL(context.headers.referer).origin;
-        //     const order = new Order({ menuItems: args.menuItems });
-        //     const line_items = [];
+        checkout: async (parent, args, context) => {
+            const url = process.env.NODE_ENV === "production" ? context.headers.origin : "http://localhost:3000";
+            // const url = new URL(context.headers.referer).origin;
+            const order = new Order({ menuItems: args.menuItems });
+            const line_items = [];
 
-        //     const { menuItems } = await order.populate('menuItems');
+            const { menuItems } = await order.populate('menuItems');
 
-        //     for (let i=0; i < menuItems.length; i++) {
-        //         const menuItem = await stripe.menuItems.create({
-        //             name: menuItems[i].name,
-        //             description: menuItems[i].description,
-        //             images: [`${url}/images/${menuItems[i].image}`]
-        //         });
-        //         const price = await stripe.prices.create({
-        //             product: menuItem.id,
-        //             unit_amount: menuItems[i].price * 100,
-        //             currency: 'usd'
-        //         });
+            for (let i=0; i < menuItems.length; i++) {
+                const menuItem = await stripe.products.create({
+                    name: menuItems[i].name,
+                    description: menuItems[i].description,
+                    images: [`${url}/images/${menuItems[i].image}`]
+                });
+                const price = await stripe.prices.create({
+                    product: menuItem.id,
+                    unit_amount: menuItems[i].price * 100,
+                    currency: 'usd'
+                });
 
-        //         line_items.push({
-        //             price: price.id,
-        //             quantity: 1
-        //         });
-        //     }
+                line_items.push({
+                    price: price.id,
+                    quantity: 1
+                });
+            }
 
-        //     const session = await stripe.checkout.sessions.create({
-        //         payment_method_types: ['card'],
-        //         line_items,
-        //         mode: 'payment',
-        //         success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
-        //         cancel_url: `${url}/`
-        //     });
+            const session = await stripe.checkout.sessions.create({
+                payment_method_types: ['card'],
+                line_items,
+                mode: 'payment',
+                success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+                cancel_url: `${url}/`
+            });
 
-        //     return { session: session.id };
-        // }
+            return { session: session.url };
+        }
     },
     Mutation: {
         login: async (parent, args, context, info) => {
