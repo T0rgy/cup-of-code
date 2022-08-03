@@ -58,17 +58,15 @@ const resolvers = {
             return await Category.find();
         },
         checkout: async (parent, args, context) => {
-            console.log(context.headers);
-            
-            const url = new URL(context.headers.referer).origin;
-            console.log(url);
+            const url = process.env.NODE_ENV === "production" ? context.headers.origin : "http://localhost:3000";
+            // const url = new URL(context.headers.referer).origin;
             const order = new Order({ menuItems: args.menuItems });
             const line_items = [];
 
             const { menuItems } = await order.populate('menuItems');
 
             for (let i=0; i < menuItems.length; i++) {
-                const menuItem = await stripe.menuItems.create({
+                const menuItem = await stripe.products.create({
                     name: menuItems[i].name,
                     description: menuItems[i].description,
                     images: [`${url}/images/${menuItems[i].image}`]
@@ -93,7 +91,7 @@ const resolvers = {
                 cancel_url: `${url}/`
             });
 
-            return { session: session.id };
+            return { session: session.url };
         }
     },
     Mutation: {
