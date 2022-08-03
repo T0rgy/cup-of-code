@@ -64,7 +64,7 @@ a:hover {
 }
 
 .cartItem {
-
+color: black;
 }
 
 .cart {
@@ -130,6 +130,8 @@ a:hover {
 }
 #login .container #login-row #login-column #login-box #login-form #register-link {
   margin-top: -85px;
+}
+
 @media screen and (max-width: 768px) {
   .cart {
     position: relative;
@@ -141,5 +143,4 @@ a:hover {
   .card {
     width: 100%;
   }
-}
 }

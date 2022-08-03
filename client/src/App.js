@@ -10,6 +10,7 @@ import Dashboard from './pages/Dashboard';
 import Signup from './pages/Signup';
 import About from './pages/About';
 import Menu from './pages/Menu';
+import CartPage from './pages/CartPage';
 import { StoreProvider } from './utils/GlobalState';
 
 import Auth from './utils/auth';
@@ -60,6 +61,10 @@ function App() {
               <Route
                 path='/menu'
                 element={<Menu />}
+              />
+              <Route
+                path='/cartpage'
+                element={<CartPage />}
               />
             </Routes>
           </StoreProvider>

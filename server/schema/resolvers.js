@@ -91,7 +91,7 @@ const resolvers = {
                 cancel_url: `${url}/`
             });
 
-            return { session: session.url };
+            return { session: session.id };
         }
     },
     Mutation: {

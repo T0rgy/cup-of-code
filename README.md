@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # mern-group-project-3
+=======
+# Cup-of-Code
+>>>>>>> 29ea8c7ac50324f058ab8cef41e398ee7cf9c669
 
 ## Description
 
@@ -46,9 +50,9 @@ or
 
 ## Credits
 
-Jacob
-Micheal S
-Sajid
+Jacob Torgeson<br>
+Micheal Samm<br>
+Sajid<br>
 
 
 ## License
