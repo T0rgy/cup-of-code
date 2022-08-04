@@ -16,8 +16,8 @@ export const ALL_USERS = gql`
                     image
                     price
                     category {
-                    _id
-                    name
+                        _id
+                        name
                     }
                 }
             }
@@ -41,8 +41,8 @@ export const GET_USER = gql`
                     image
                     price
                     category {
-                    _id
-                    name
+                        _id
+                        name
                     }
                 }
             }
@@ -105,8 +105,8 @@ export const GET_ORDER = gql`
                 image
                 price
                 category {
-                _id
-                name
+                    _id
+                    name
                 }
             }
         }

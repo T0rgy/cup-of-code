@@ -23,7 +23,7 @@ function MenuItem(item) {
         if (itemInCart) {
             dispatch({
                 type: UPDATE_CART_QUANTITY,
-                id: _id,
+                _id: _id,
                 purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
             });
             idbPromise('cart', 'put', {
@@ -49,8 +49,8 @@ function MenuItem(item) {
                     className='menuItemImage rounded float-left img-thumbnail w-50'
                     alt={name}
                     src={`/images/${image}`}
-                    />
-                    <p className="text-uppercase font-weight-bold">{name}</p>
+                />
+                <p className="text-uppercase font-weight-bold">{name}</p>
             </Link>
             <div className='text-left col-6'>
                 <div className="font-weight-italic">{description}</div>

@@ -47,7 +47,7 @@ class Auth {
     // login as function of token that redirects to dashboard and sets item in localStorage
     login(token) {
         localStorage.setItem(localStorageKey, token);
-        window.location.assign('/');
+        window.location.assign('/menu');
     }
 
     // logout removes token from localStorage and redirects to login window

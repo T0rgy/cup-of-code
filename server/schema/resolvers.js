@@ -25,7 +25,10 @@ const resolvers = {
                 where.username = args.username
             }
 
-            return await User.findOne(where)
+            return await User.findOne(where).populate({
+                path: 'orders.menuItems',
+                populate: 'category'
+            });
         },
         menuItem: async (parent, { _id }) => {
             return await MenuItem.findById(_id).populate('category');

@@ -33,8 +33,9 @@ function Signup(props) {
 
   return (
     <div id='login'>
-      <Link to="/login">← Go to Login</Link>
+      
       <div className='container'>
+        <Link to="/login">← Go to Login</Link>
         <div id='login-row' className='row justify-content-center align-items-center'>
           <div id='login-column' className='col-md-6'>
             <div id='login-box' className='col-md-12'>
