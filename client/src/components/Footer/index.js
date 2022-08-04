@@ -15,10 +15,10 @@ function Footer() {
                         <p>Sat-Sun: 6AM-4PM</p>
                     </div>
                     <div className="col-3 text-end align-middle">
-                        <a href='' target='_blank' title='Facebook'>
+                        <a href='https://www.facebook.com/' target='_blank' rel='noreferrer' title='Facebook'>
                             <i className="fa-3x fa-brands fa-inverse fa-facebook p-1"></i>
                         </a>
-                        <a href='' target='_blank' title='Instagram'>
+                        <a href='https://www.instagram.com/' target='_blank' rel='noreferrer' title='Instagram'>
                             <i className="fa-3x fa-brands fa-inverse fa-instagram p-1"></i>
                         </a>
                     </div>
