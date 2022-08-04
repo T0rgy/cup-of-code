@@ -64,7 +64,7 @@ color: black;
   position: fixed;
   top: 100px;
   right: 0px;
-  min-width: 20%;
+  max-width: 30%;
   max-height: 60%;
   overflow: auto;
   padding: .5rem;
@@ -101,7 +101,7 @@ color: black;
 }
 
 .coffee {
-  float: ri;
+  float: right;
   width: 30%;
   margin: 30px;
 }
@@ -127,6 +127,19 @@ color: black;
   color: #dde6d0;
   font-size: 100px;
   line-height: 200px;
+}
+
+.btn.btn-success.active.focus,
+.btn.btn-success.active:focus,
+.btn.btn-success.active:hover,
+.btn.btn-success:active.focus,
+.btn.btn-success:active:focus,
+.btn.btn-success:active:hover {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+  outline: none;
+  box-shadow: none;
 }
 
 #login .container #login-row #login-column #login-box {
