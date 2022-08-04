@@ -133,11 +133,12 @@ a:hover {
 color: black;
 }
 
+
 .cart {
   position: fixed;
-  top: 100px;
+  top: 150px;
   right: 0px;
-  max-width: 30%;
+  max-width: 25%;
   max-height: 60%;
   overflow: auto;
   padding: .5rem;
@@ -157,20 +158,27 @@ color: black;
   margin-right: 1rem;
 }
 
-.menuItem {
-  width: 25%;
-  text-align: center;
+.menuItemCard h3 {
+text-decoration: underline;
 }
-
+.menuItemCard p {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .menuItemList {
+  float: left;
   width: 75%;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 100px;
 }
 
 .menuItemImage {
-  max-width: 65%;
+  max-width: 85%;
+}
+
+.price {
+  font-size: large;
+  font-weight: bolder;
 }
 
 .coffee {

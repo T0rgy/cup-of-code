@@ -66,11 +66,11 @@ const Cart = () => {
                         <CartItem key={menuItem._id} item={menuItem} />
                     ))}
 
-                    <div className='flex-row space-between'>
+                    <div className='cartItems'>
                         <strong>Total: ${calculateTotal()}</strong>
                         {
                             Auth.loggedIn() ? (
-                                <button onClick={submitCheckout}>
+                                <button className="btn btn-primary mt-3"onClick={submitCheckout}>
                                     Checkout
                                 </button>
                                 ) : (
