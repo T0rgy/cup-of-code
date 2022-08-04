@@ -5,10 +5,10 @@ import { setContext } from '@apollo/client/link/context';
 
 
 import NavBar from "./components/NavBar";
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+import Login from './pages/login';
+import Dashboard from './pages/dashboard';
 import Signup from './pages/Signup';
-import About from './pages/About';
+import About from './pages/about';
 import Menu from './pages/Menu';
 import OrderHistory from './pages/OrderHistory';
 import Success from './pages/Success';
