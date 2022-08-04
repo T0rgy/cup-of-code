@@ -32,12 +32,14 @@ npm start
 ```
 
 go to
+
 ```url
 http://localhost:3000
 ```
 or 
-```url
 
+```url
+https://polar-headland-37122.herokuapp.com/
 ```
 
 ## Usage

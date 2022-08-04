@@ -44,6 +44,9 @@ function CategoryMenu() {
    
 
     return (
+
+
+        
         <div className="btn-group">
             <h2 className='text-info text-center'>Choose a Category:</h2>
             {categories.map((item) => (

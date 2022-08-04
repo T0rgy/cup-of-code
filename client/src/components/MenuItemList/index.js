@@ -12,7 +12,7 @@ function MenuItemList() {
 
     const { currentCategory } = state;
 
-    const { data } = useQuery(GETMANY_MENUITEMS);
+    const { loading, data } = useQuery(GETMANY_MENUITEMS);
 
     useEffect(() => {
         if (data) {

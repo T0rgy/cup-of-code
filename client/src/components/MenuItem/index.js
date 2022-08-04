@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
-import { idbPromise } from '../../utils/helpers';
 
 function MenuItem(item) {
     const [state, dispatch] = useStoreContext();
@@ -22,41 +22,35 @@ function MenuItem(item) {
         if (itemInCart) {
             dispatch({
                 type: UPDATE_CART_QUANTITY,
-                _id: _id,
-                purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
-            });
-            idbPromise('cart', 'put', {
-                ...itemInCart,
+                id: _id,
                 purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
             });
         }   else {
             dispatch({
                 type: ADD_TO_CART,
                 menuItem: { ...item, purchaseQuantity: 1 }
-            });
-            idbPromise('cart', 'put', { 
-                ...item,
-                purchaseQuantity: 1
-            });
+            })
         }
     }
 
     return (
-        <div className='menuItemCard col-5 p-4 m-3 border border-primary rounded'>
+        <div className='menuItemCard m-3 border border-primary rounded col-4'> 
+            <Link to={`/menuItems/${_id}`}>
                 <img
                     className='menuItemImage rounded float-center'
                     alt={name}
                     width="150px"
                     height="150px"
                     src={`/images/${image}`}
-                />
-                <h3 className="text-uppercase font-weight-bold">{name}</h3>
-            <div className='text-left col-6'>
-                <p className="description">{description}</p>
-                <p className="ingredients">{ingredients}</p>
-                <span className="price">${price}</span>
+                    />
+                    <p className="text-uppercase font-weight-bold">{name}</p>
+            </Link>
+            <div className='text-center'>
+                <div className="font-weight-italic">{description}</div>
+                <div className="">{ingredients}</div>
+                <span className="font-weight-bold">${price}</span>
             </div>
-            <button className="addBtn btn btn-primary mt-3" onClick={addToCart}>Add to Cart</button>
+            <button className="btn btn-group btn-primary position-relative bottom-center" onClick={addToCart}>Add to Cart</button>
         </div>
     );
 }
