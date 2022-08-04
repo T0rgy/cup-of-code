@@ -22,7 +22,6 @@ const OrderHistory = () => {
     function calculateTotal(order) {
         let sum=0;
         const menuItems = order.menuItems;
-        console.log("This one ", menuItems);
 
         menuItems.forEach((menuItem) => {
             sum += menuItem.price;
@@ -30,7 +29,7 @@ const OrderHistory = () => {
         return sum.toFixed(2);
     };
 
-    
+
 
     return (
       <>
