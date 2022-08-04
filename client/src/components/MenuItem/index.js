@@ -34,21 +34,21 @@ function MenuItem(item) {
     }
 
     return (
-        <div className='menuItemCard'> 
+        <div className='menuItemCard col-5 p-4 m-3 border border-primary rounded'> 
             <Link to={`/menuItems/${_id}`}>
                 <img
-                    className='menuItemImage'
+                    className='menuItemImage rounded float-left img-thumbnail w-50'
                     alt={name}
                     src={`/images/${image}`}
                     />
-                    <p>{name}</p>
+                    <p className="text-uppercase font-weight-bold">{name}</p>
             </Link>
-            <div>
-                <div>{description}</div>
-                <div>{ingredients}</div>
-                <span>${price}</span>
+            <div className='text-left col-6'>
+                <div className="font-weight-italic">{description}</div>
+                <div className="">{ingredients}</div>
+                <span className="font-weight-bold">${price}</span>
             </div>
-            <button onClick={addToCart}>Add to Cart</button>
+            <button className="btn btn-primary mt-3" onClick={addToCart}>Add to Cart</button>
         </div>
     );
 }

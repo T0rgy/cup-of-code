@@ -11,7 +11,7 @@ function MenuItemList() {
 
     const { currentCategory } = state;
 
-    const { loading, data } = useQuery(GETMANY_MENUITEMS);
+    const { data } = useQuery(GETMANY_MENUITEMS);
 
     useEffect(() => {
         if (data) {
@@ -34,9 +34,9 @@ function MenuItemList() {
 
     return (
         <div className='menuItemList'>
-            <h2> Our MenuItems:</h2>
+            <h2 className="text-center"> Our MenuItems</h2>
             {state.menuItems.length ? (
-                <div className=''>
+                <div className='row'>
                     {filterMenuItems().map((menuItem) => (
                         <MenuItem
                         key={menuItem._id}

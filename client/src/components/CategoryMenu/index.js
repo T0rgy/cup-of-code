@@ -5,6 +5,9 @@ import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions'
 import { QUERY_CATEGORIES } from '../../utils/queries';
 
 function CategoryMenu() {
+
+
+
     const [state, dispatch] = useStoreContext();
 
     const { categories } = state;
@@ -26,14 +29,17 @@ function CategoryMenu() {
             currentCategory: id,
         });
     };
+   
 
     return (
-        <div>
-            <h2>Choose a Category:</h2>
+        <div className="btn-group">
+            <h2 className='text-info text-center'>Choose a Category:</h2>
             {categories.map((item) => (
                 <button
+                id={item._id}
+                className='btn btn-primary m-4'
                 key={item._id}
-                onClick={() => {
+                onClick={() => {     
                     handleClick(item._id);
                 }}
                 >

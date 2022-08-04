@@ -13,7 +13,7 @@ const Dashboard = () => {
         navigate('/about');
     }
 
-    const { loading, error, data } = useQuery(GET_USER, {
+    const { loading, error, data } = useQuery(GET_USER,  {
         variables: {
             _id: currentUser?.data?._id
         }
@@ -29,11 +29,18 @@ const Dashboard = () => {
         return 'No user found';
     }
 
-    
+    function OrderHistory() {
+        const {data} = useQuery(GET_ORDER);
+        let user;
+
+        if (data) {
+            user = data.user;
+        }
+    }
 
     
     return (
-        <div>
+        <div className='container'>
             <h1>Welcome, {user.username}</h1>
             <p>{user.email}</p>
             <h2>Order History:</h2>
