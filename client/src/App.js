@@ -12,6 +12,7 @@ import About from './pages/About';
 import Menu from './pages/Menu';
 import OrderHistory from './pages/OrderHistory';
 import Success from './pages/Success';
+import Footer from './components/Footer';
 import { StoreProvider } from './utils/GlobalState';
 
 import Auth from './utils/auth';
@@ -72,6 +73,7 @@ function App() {
                 element={<Success />}
               />              
             </Routes>
+            <Footer />
           </StoreProvider>
         </div>
       </Router>

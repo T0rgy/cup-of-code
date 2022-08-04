@@ -21,9 +21,9 @@ function Success() {
                     idbPromise('cart', 'delete', item);
                 });
             }
-            // setTimeout(() => {
-            //     window.location.assign('/orderhistory');
-            // }, 10000)
+            setTimeout(() => {
+                window.location.assign('/orderhistory');
+            }, 10000)
         }
 
         saveOrder();

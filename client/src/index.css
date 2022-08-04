@@ -31,6 +31,20 @@
   color: white;
 }
 
+footer {
+  background-color: #333;
+  overflow: hidden;
+  padding: 10px 0px;
+}
+
+footer h4, footer p {
+  color: #f2f2f2;
+  text-align: center;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+
 .bgimage {
   width:100%;
   height:500px;
@@ -45,6 +59,17 @@
   text-shadow:2px 2px #333;
   text-align: center;
   padding: 50px;
+}
+.bgimagehome {
+  width: auto;
+  height: 100%;
+  background: url('../public/images/pikwizard-coffee-beans-arranged-on-wooden-table.jpg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: top;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
 }
 a {
   color: #B12704;
