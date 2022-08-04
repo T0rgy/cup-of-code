@@ -5,6 +5,7 @@ import MenuItem from '../MenuItem';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_MENUITEMS } from '../../utils/actions';
 import { GETMANY_MENUITEMS } from '../../utils/queries';
+import { idbPromise } from '../../utils/helpers';
 
 function MenuItemList() {
     const [state, dispatch] = useStoreContext();
@@ -19,8 +20,19 @@ function MenuItemList() {
                 type: UPDATE_MENUITEMS,
                 menuItems: data.menuItems,
             });
+            data.menuItems.forEach((menuItem) => {
+                idbPromise('menuItems', 'put', menuItem);
+            });
         }
-    }, [data, dispatch]);
+        else if (!loading) {
+            idbPromise('menuItems', 'get').then((menuItems) => {
+                dispatch({
+                    type: UPDATE_MENUITEMS,
+                    menuItems: menuItems
+                });
+            });
+        }
+    }, [data, loading, dispatch]);
 
     function filterMenuItems() {
         if (!currentCategory) {
