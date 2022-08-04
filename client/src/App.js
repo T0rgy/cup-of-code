@@ -10,7 +10,8 @@ import Dashboard from './pages/Dashboard';
 import Signup from './pages/Signup';
 import About from './pages/About';
 import Menu from './pages/Menu';
-import CartPage from './pages/CartPage';
+import OrderHistory from './pages/OrderHistory';
+import Success from './pages/Success';
 import { StoreProvider } from './utils/GlobalState';
 
 import Auth from './utils/auth';
@@ -63,9 +64,13 @@ function App() {
                 element={<Menu />}
               />
               <Route
-                path='/cartpage'
-                element={<CartPage />}
+                path='/orderhistory'
+                element={<OrderHistory />}
               />
+              <Route
+                path='/success'
+                element={<Success />}
+              />              
             </Routes>
           </StoreProvider>
         </div>
