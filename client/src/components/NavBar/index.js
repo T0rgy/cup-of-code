@@ -13,8 +13,8 @@ function NavBar() {
           <Link className="link"  to="/about">
             About
           </Link>
-          <Link className="link"  to="/cart">
-            Cart
+          <Link className="link"  to="/orderhistory">
+            Order History
           </Link>
             <a className="link"  href="/" onClick={() => Auth.logout()}>
               Logout
@@ -30,8 +30,8 @@ function NavBar() {
           <Link className="link"  to="/about">
             About
           </Link>
-          <Link className="link"  to="/cart">
-            Cart
+          <Link className="link"  to="/orderhistory">
+            Order History
           </Link>
           <Link className="link"  to="/signup">
             Signup
