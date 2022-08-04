@@ -2,10 +2,16 @@
   --primary: #000000;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #333;
   overflow: hidden;
+  padding: 5px 0;
 }
 
 /* Style the links inside the navigation bar */
@@ -35,7 +41,11 @@
 footer {
   background-color: #333;
   overflow: hidden;
-  padding: 10px 0px;
+  padding: 15px 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 /* Set color of text in footer to match navbar */
@@ -213,6 +223,10 @@ color: black;
 }
 #login .container #login-row #login-column #login-box #login-form #register-link {
   margin-top: -85px;
+}
+
+#login .container {
+  padding-bottom: 50px;
 }
 
 @media screen and (max-width: 768px) {
