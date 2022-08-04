@@ -1,4 +1,4 @@
-const User = require('./User');
+const User = require('./user');
 const MenuItem = require('./MenuItem');
 const Category = require('./Category');
 const Order = require('./Order');
