@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
@@ -23,7 +22,7 @@ function MenuItem(item) {
         if (itemInCart) {
             dispatch({
                 type: UPDATE_CART_QUANTITY,
-                id: _id,
+                _id: _id,
                 purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
             });
             idbPromise('cart', 'put', {
@@ -43,23 +42,21 @@ function MenuItem(item) {
     }
 
     return (
-        <div className='menuItemCard col-5 p-4 m-3 border border-primary rounded'> 
-            <Link to={`/menuItems/${_id}`}>
+        <div className='menuItemCard col-5 p-4 m-3 border border-primary rounded'>
                 <img
                     className='menuItemImage rounded float-center'
                     alt={name}
                     width="150px"
                     height="150px"
                     src={`/images/${image}`}
-                    />
-                    <p className="text-uppercase font-weight-bold">{name}</p>
-            </Link>
-            <div className='text-center col-12'>
-                <div className="font-weight-italic">{description}</div>
-                <div className="">{ingredients}</div>
-                <span className="font-weight-bold">${price}</span>
+                />
+                <h3 className="text-uppercase font-weight-bold">{name}</h3>
+            <div className='text-left col-6'>
+                <p className="description">{description}</p>
+                <p className="ingredients">{ingredients}</p>
+                <span className="price">${price}</span>
             </div>
-            <button className="btn btn-group btn-primary position-relative bottom-center" onClick={addToCart}>Add to Cart</button>
+            <button className="addBtn btn btn-primary mt-3" onClick={addToCart}>Add to Cart</button>
         </div>
     );
 }

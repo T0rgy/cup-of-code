@@ -4,7 +4,11 @@
 
 html {
   position: relative;
-  min-height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  padding-bottom: 85px;
 }
 
 /* Add a black background color to the top navigation */
@@ -139,11 +143,12 @@ a:hover {
 color: black;
 }
 
+
 .cart {
   position: fixed;
-  top: 100px;
+  top: 150px;
   right: 0px;
-  max-width: 30%;
+  max-width: 25%;
   max-height: 60%;
   overflow: auto;
   padding: .5rem;
@@ -163,20 +168,27 @@ color: black;
   margin-right: 1rem;
 }
 
-.menuItem {
-  width: 25%;
-  text-align: center;
+.menuItemCard h3 {
+text-decoration: underline;
 }
-
+.menuItemCard p {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .menuItemList {
+  float: left;
   width: 75%;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 100px;
 }
 
 .menuItemImage {
-  max-width: 65%;
+  max-width: 85%;
+}
+
+.price {
+  font-size: large;
+  font-weight: bolder;
 }
 <<<<<<< HEAD
 .about {
@@ -255,21 +267,6 @@ color: black;
   .card {
     width: 100%;
   }
-<<<<<<< HEAD
-}
-
-.btn.btn-success.active.focus,
-.btn.btn-success.active:focus,
-.btn.btn-success.active:hover,
-.btn.btn-success:active.focus,
-.btn.btn-success:active:focus,
-.btn.btn-success:active:hover {
-  color: #fff;
-  background-color: #5cb85c;
-  border-color: #5cb85c;
-  outline: none;
-  box-shadow: none;
-=======
   .about {
     float: left;
     width: 100%;
@@ -277,5 +274,4 @@ color: black;
     align-content: center;
     padding: 10px;
   }
->>>>>>> d3235b9aee08e9bf3a6b1a6717c78cbd87cfd284
 }

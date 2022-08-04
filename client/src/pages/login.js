@@ -78,36 +78,38 @@ const Login = () => {
                     <div id='login-column' className='col-md-6'>
                         <div id='login-box' className='col-md-12'>
                             <form id='login-form' onSubmit={handleSubmit}>
-                            <h2 className="text-center text-info pt-5">Please login to start an order.</h2>
-                            <div className='form-group'>
-                                <input
-                                className='form-control'
-                                    name='username'
-                                    value={username}
-                                    onChange={e => setUsername(e.target.value)}
-                                    placeholder='Username'
-                                    type='text'
-                                    required
-                                />
+
+                                <h2 className="text-center text-info pt-5">Please login to start an order.</h2>
+
+                                <div className='form-group'>
+                                    <label htmlFor="username">Username:</label>
+                                    <input
+                                    className='form-control'
+                                        name='username'
+                                        value={username}
+                                        onChange={e => setUsername(e.target.value)}
+                                        placeholder='Username'
+                                        type='text'
+                                        required
+                                    />
                                 </div>
 
                                 <div className='form-group'>
-
-                                <input
-                                className='form-control'
-                                    name='password'
-                                    value={password}
-                                    onChange={e => setPassword(e.target.value)}
-                                    placeholder='Password'
-                                    type='password'
-                                    required
-                                />
+                                    <label htmlFor="username">Password:</label>
+                                    <input
+                                    className='form-control'
+                                        name='password'
+                                        value={password}
+                                        onChange={e => setPassword(e.target.value)}
+                                        placeholder='******'
+                                        type='password'
+                                        required
+                                    />
                                 </div>
 
                                 <div className='form-group pt-3'>
-
-                                <button className='btn btn-info btn-md'>Login</button>
-                                {error && <div>Invalid credentials</div>}
+                                    <button className='btn btn-info btn-md'>Login</button>
+                                    {error && <div>Invalid credentials</div>}
                                 </div>
                             </form>
                         </div>

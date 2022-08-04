@@ -23,7 +23,7 @@ function Success() {
             }
             setTimeout(() => {
                 window.location.assign('/orderhistory');
-            }, 10000)
+            }, 6000)
         }
 
         saveOrder();

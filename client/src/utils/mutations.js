@@ -52,12 +52,14 @@ export const ADD_ORDER = gql`
       _id
       purchaseDate
       menuItems {
-        name
         _id
+        name
         description
         image
         price
+        ingredients
         category {
+          _id
           name
         }
       }
