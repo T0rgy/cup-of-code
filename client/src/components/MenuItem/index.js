@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
@@ -43,21 +42,19 @@ function MenuItem(item) {
     }
 
     return (
-        <div className='menuItemCard col-5 p-4 m-3 border border-primary rounded'> 
-            <Link to={`/menuItems/${_id}`}>
+        <div className='menuItemCard col-5 p-4 m-3 border border-primary rounded'>
                 <img
                     className='menuItemImage rounded float-left img-thumbnail w-50'
                     alt={name}
                     src={`/images/${image}`}
                 />
-                <p className="text-uppercase font-weight-bold">{name}</p>
-            </Link>
+                <h3 className="text-uppercase font-weight-bold">{name}</h3>
             <div className='text-left col-6'>
-                <div className="font-weight-italic">{description}</div>
-                <div className="">{ingredients}</div>
-                <span className="font-weight-bold">${price}</span>
+                <p className="description">{description}</p>
+                <p className="ingredients">{ingredients}</p>
+                <span className="price">${price}</span>
             </div>
-            <button className="btn btn-primary mt-3" onClick={addToCart}>Add to Cart</button>
+            <button className="addBtn btn btn-primary mt-3" onClick={addToCart}>Add to Cart</button>
         </div>
     );
 }
