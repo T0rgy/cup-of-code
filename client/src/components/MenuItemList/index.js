@@ -34,9 +34,9 @@ function MenuItemList() {
 
     return (
         <div className='menuItemList'>
-            <h2 className="text-center"> Our MenuItems</h2>
+            <h2 className="text-center bg-info m-5"> Our MenuItems</h2>
             {state.menuItems.length ? (
-                <div className='row'>
+                <div className='row text-center'>
                     {filterMenuItems().map((menuItem) => (
                         <MenuItem
                         key={menuItem._id}
