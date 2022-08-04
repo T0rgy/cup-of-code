@@ -118,6 +118,17 @@ color: black;
   background-color: #04AA6D;
 }
 
+.checkmark {
+  border-radius: 200px;
+  height: 200px;
+  width: 200px;
+  background: #83d40a;
+  margin: 0 auto;
+  color: #dde6d0;
+  font-size: 100px;
+  line-height: 200px;
+}
+
 #login .container #login-row #login-column #login-box {
   margin-top: 120px;
   max-width: 100%;
@@ -143,5 +154,12 @@ color: black;
   }
   .card {
     width: 100%;
+  }
+  .about {
+    float: left;
+    width: 100%;
+    margin: 10px;
+    align-content: center;
+    padding: 10px;
   }
 }
