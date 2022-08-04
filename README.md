@@ -2,7 +2,11 @@
 
 ## Description
 
-This is a Coffee Shop website that is used to create orders from a menu. The user must be logged in to create a order. We built this because it demonstrates the use of MERN Development with MongoDB for database, Express for back end and React for the front end using node js. We had problems with the cart and through troubleshooting we were able to resolve issues. We learned how to create a full functioning MERN website. 
+This is a Coffee Shop website that is used to create orders from a menu. The user must be logged in to create a order. We built this because it demonstrates the use of MERN Development with MongoDB for database, Express for back end and React for the front end using node js. We had problems with the cart and through troubleshooting we were able to resolve issues. We learned how to create a full functioning MERN website.  
+[Heroku Deployment](https://polar-headland-37122.herokuapp.com/)  
+![Home](./assets/img/cupofcodeHome.png)  
+![Menu](./assets/img/cupofcodeMenu.png)  
+![About](./assets/img/cupofcodeAbout.png)
 
 ## Table of Contents
 
@@ -47,8 +51,8 @@ or
 ## Credits
 
 Jacob Torgeson<br>
-Micheal Samm<br>
-Sajid<br>
+Michael Samm<br>
+Sajid Jaber<br>
 
 
 ## License
