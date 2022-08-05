@@ -36,7 +36,7 @@ connection.on('open', async () => {
             ingredients: 'Crepe, Nutella, Strawberries'
         },
         {
-            name: 'Basic Breakefast',
+            name: 'Basic Breakfast',
             category: categories[0]._id,
             description: "You're run of the mill breakfast Mom would always make.",
             image: 'basic-breakfast.jpg',
@@ -46,7 +46,7 @@ connection.on('open', async () => {
         {
             name: 'Biscuits and Sausage Gravy',
             category: categories[0]._id,
-            description: 'Two cripsy handmade biscuits slathered in delicious sausage Gravy.',
+            description: 'Two crispy handmade biscuits slathered in a delicious sausage Gravy.',
             image: 'biscuits-sausage-gravy.webp',
             price: '15.50',
             ingredients: 'Biscuits, Sausage, Sausage Gravy Mix, Green Onion'
